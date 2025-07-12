@@ -23,10 +23,10 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
 
-    const user = [
+    const user = {
       email,
       password
-    ]
+    }
 
     dispatch(login(user));
   }
@@ -34,7 +34,7 @@ const Login = () => {
   //Limpar todos os states
   useEffect(() => {
     dispatch(reset())
-  }, dispatch);
+  }, [dispatch]);
 
   return (
     <div id="login">
