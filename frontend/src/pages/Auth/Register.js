@@ -47,7 +47,7 @@ const Register = () => {
       <p className="subtitle">Cadastre-se para ver as fotos dos seus amigos!</p>
       <form onSubmit={handleSubmit}>
         <input type="text" placeholder="Nome" onChange={(e) => setName(e.target.value)} value={name || ""} />
-        <input type="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} value={email || ""} />
+        <input type="email" placeholder="Email" autoComplete="new-email"  onChange={(e) => setEmail(e.target.value)} value={email || ""} />
         <input type="password" placeholder="Senha" onChange={(e) => setPassword(e.target.value)} value={password || ""} />
         <input type="password" placeholder="Confirme a senha" onChange={(e) => setConfirmPassword(e.target.value)} value={confirmPassword || ""} />
         {!loading && <input type="submit" value="Cadastrar" />}
