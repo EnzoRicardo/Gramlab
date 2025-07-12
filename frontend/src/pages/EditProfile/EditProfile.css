@@ -1,0 +1,21 @@
+#edit-profile {
+    padding: 2em 2em;
+    max-width: 33%;
+    margin: 2em auto;
+    text-align: center;
+}
+
+.subtitle {
+    color: #ccc;
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 1em;
+}
+
+.edit-h2 {
+    text-transform: uppercase;
+}
