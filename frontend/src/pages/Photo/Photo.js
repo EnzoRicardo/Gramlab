@@ -14,7 +14,7 @@ import { useParams } from "react-router-dom";
 import { useResetComponentMessage } from "../../hooks/useResetComponentMessage";
 
 // Redux
-import { getPhoto, like } from "../../slices/photoSlice";
+import { getPhoto, like, comment } from "../../slices/photoSlice";
 import LikeContainer from "../../components/LikeContainer";
 
 
@@ -30,6 +30,7 @@ const Photo = () => {
     const {photo, loading, error ,message} = useSelector((state) => state.photo)
 
     // Comentarios
+    const [commentText, setCommentText] = useState("")
 
 
     // Carregar dados da foto
@@ -37,12 +38,17 @@ const Photo = () => {
         dispatch(getPhoto(id));
     }, [dispatch, id]);
 
-    // Like e comentarios
+    // Like 
     const handleLike = () => {
         dispatch(like(photo._id))
 
         resetMessage();
-    }
+    };
+
+    //Comentario
+    const handleComment = (e) => {
+        e.preventDefault()
+    };
 
     if(loading) {
         return <p>Comentarios...</p>
@@ -54,6 +60,9 @@ const Photo = () => {
         <div className="message-container">
             {error && <Message msg={error} type="error" />}
             {message && <Message msg={message} type="success" />}
+        </div>
+        <div className="comments">
+            <h3>Comentários: ({photo.comments.lenght})</h3>
         </div>
     </div>;
 };
