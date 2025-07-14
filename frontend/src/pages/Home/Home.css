@@ -6,9 +6,12 @@
 
 #home .btn {
     display: block;
+    width: 250px;
+    margin: 0 auto; 
     max-width: 80px;
     text-align: center;
     margin: 0.5em 0 2em 0;
+    padding: 13px 5px;
 }
 
 .no-photos {
